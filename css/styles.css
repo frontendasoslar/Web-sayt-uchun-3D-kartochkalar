@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  background-color: #3d385a;
+}
+
+/* Elementlar transformatsiyalanganda 3D efektga ega bo'lishi uchun o'rab turuvchi bo'limga berilgan klas */
+.section {
+  perspective: 1000px;
+}
+
+/* Kartochkalarni o'rab turuvchi ota element klaslari */
+.container {
+  /* Ota element eni */
+ width: 680px;
+ /* Ota elementni markazga keltiruvchi klaslar */
+ margin: auto;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ /* Ota elementning bo'yi */
+ height: 100vh;
+ /* Ota element holatini o'zgartirishi uchun ketadigan vaqt */
+ transition: 1s;
+ /* Ota elementni o'qlar bo'yicha burulishi */
+ transform: rotateX(55deg) rotateZ(-45deg) rotateY(10deg);
+ /* Transformatsiya stili */
+ transform-style: preserve-3d;
+}
+
+/* Kartochkalar bosiyganda qo'shiladigan va olib tashlanadigan klas ya'ni otaelementno o'qlar bo'yicha burilishi olib tashlanadi va qo'shiladi */
+.container-orign {
+  transform: rotate(0);
+}
+
+/* Rasmlarning o'lchami */
+.img {
+  max-width: 100%;
+}
+
+/* Kartochkalarni o'rab toruvchi qutti klaslari */
+.card {
+  /* Quttining eni */
+  width: 200px;
+  /* Quttining boshqa quttilardan orasidagi masofa */
+  margin: 10px;
+  /* Har bir quttining holatini o'zgartirishi uchun ketadigan vaqt */
+  transition: 0.3s;
+}
+
+/* Quttilarning hoveh holatidagi stillari */
+.card:hover {
+  /* Qutti ustiga sichqonchani olib borganda barmoqcha chiqishi uchun */
+  cursor: pointer;
+  /* Hover holatida Z o'q bo'yicha 10px ko'tariladi */
+  transform: translateZ(10px);
+}
